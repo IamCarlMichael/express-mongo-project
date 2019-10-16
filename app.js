@@ -6,4 +6,12 @@ if (app.get("env") !== "test") {
   require("./db");
 }
 
+app.use(express.json());
+
+const user = require("./routes/users");
+app.use("/users", user);
+
+const event = require("./routes/events");
+app.use("/events", event);
+
 module.exports = app;

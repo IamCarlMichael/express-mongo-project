@@ -8,12 +8,12 @@ const eventSchema = new mongoose.Schema({
   },
   dates: [
     {
-      date: Date,
+      date: String,
       names: [String]
     }
   ],
-  dateCreated: Date,
-  dateExpires: Date,
+  dateCreated: String,
+  dateExpires: String,
   organiserName: {
     type: String,
     required: true

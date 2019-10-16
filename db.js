@@ -19,6 +19,7 @@ mongoose.connect(dbUrl, {
 });
 
 const db = mongoose.connection;
+mongoose.set("debug", true);
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
   console.log("we're connected!");
