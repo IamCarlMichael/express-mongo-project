@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
     minlength: 3,
     index: true
   },
-  telNumber: Number
+  telNumber: Number,
+  uid: String
 });
 
 const User = mongoose.model("User", userSchema);

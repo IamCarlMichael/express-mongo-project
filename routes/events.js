@@ -49,7 +49,7 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
-router.delete("/:id/:date", async (req, res, next) => {
+router.delete("/:id/dates/:date", async (req, res, next) => {
   const eventId = req.params.id;
   const dateToDel = req.params.date;
   try {
@@ -65,7 +65,7 @@ router.delete("/:id/:date", async (req, res, next) => {
   }
 });
 
-router.delete("/:id/:date/:name", async (req, res, next) => {
+router.delete("/:id/dates/:date/users/:name", async (req, res, next) => {
   const eventId = req.params.id;
   const eventDate = req.params.date;
   const nameToDel = req.params.name;
@@ -83,7 +83,7 @@ router.delete("/:id/:date/:name", async (req, res, next) => {
   }
 });
 
-router.patch("/:id/:date/:name", async (req, res, next) => {
+router.patch("/:id/dates/:date/users/:name", async (req, res, next) => {
   const eventId = req.params.id;
   const eventDate = req.params.date;
   const nameToAdd = req.params.name;
@@ -134,7 +134,7 @@ router.post("/new", async (req, res, next) => {
   }
 });
 
-router.post("/:id", async (req, res, next) => {
+router.post("/:id", async (req, res) => {
   const eventId = req.params.id;
   const suggestedNewDates = req.body.dates;
   try {

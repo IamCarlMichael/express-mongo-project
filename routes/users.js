@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
 
-router.post("/new", async (req, res, next) => {
+router.post("/new", async (req, res) => {
   const usernameAdd = req.body;
   const user = new User(usernameAdd);
   console.log(usernameAdd);
@@ -40,10 +40,10 @@ router.get("/:name", async (req, res, next) => {
   }
 });
 
-router.delete("/:name", async (req, res, next) => {
-  const name = req.params.name;
+router.delete("/:id", async (req, res, next) => {
+  const uid = req.params.id;
   try {
-    const user = await User.deleteOne({ username: name });
+    const user = await User.deleteOne({ uid: uid });
     res.send(user);
   } catch (error) {
     error.status = 404;

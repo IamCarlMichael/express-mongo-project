@@ -13,10 +13,9 @@ const eventSchema = new mongoose.Schema({
     }
   ],
   dateCreated: String,
-  dateExpires: String,
+  voteExpires: String,
   organiserName: {
-    type: String,
-    required: true
+    type: String
   }
 });
 
