@@ -16,7 +16,8 @@ const eventSchema = new mongoose.Schema({
   voteExpires: String,
   organiserName: {
     type: String
-  }
+  },
+  uid: String
 });
 
 const Event = mongoose.model("Event", eventSchema);

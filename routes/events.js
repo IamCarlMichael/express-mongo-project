@@ -18,9 +18,10 @@ router.post("/new", async (req, res, next) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/user/:userId", async (req, res) => {
+  const userId = req.params.userId;
   try {
-    const event = await Event.find();
+    const event = await Event.find({ uid: userId });
     res.send(event);
   } catch (err) {
     err => console.log("Caught:", err.message);
